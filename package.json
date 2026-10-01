@@ -1,0 +1,26 @@
+{
+  "name": "repo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://x-access-token:eyJ0eXAiOiJKV1QiLCJraWQiOiJwRFpsK3MrTmZBTVBCeExqdXlka0dYK2JYV01xbFprc1U1RW1DUE1mQXVnIiwiYWxnIjoiSFMyNTYifQ.eyJzY29wZSI6InJlcG86YmUxZTc1OWMtZDhmYi00OWJmLWE1Y2EtMGZiMjg5NGJhYzhiOndyaXRlIiwicmVwb19zbHVnIjoibW9oYW1tZWRmYXJvdXEwMC9raW5nbW9oYW1lZCIsImV4cCI6MTc5MDg2OTM3MCwiaWF0IjoxNzkwODY1NzcwfQ.3y5W09Rr_-FYXDtFrWa_NjNDE5CjVi6u-2v1cV9q554@hgit.services-prod.nsvcs.net/mohammedfarouq00/kingmohamed.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "@netlify/blobs": "^11.1.3",
+    "@netlify/database": "^2.0.1",
+    "@netlify/functions": "^6.0.2",
+    "drizzle-orm": "^1.0.0-beta.22"
+  },
+  "devDependencies": {
+    "drizzle-kit": "^1.0.0-beta.22"
+  }
+}
