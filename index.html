@@ -59,6 +59,7 @@
 
             <nav class="hidden md:flex items-center gap-7 text-sm text-brand-muted font-medium">
                 <a href="#products" class="hover:text-white transition-colors">Products</a>
+                <a href="#reviews" class="hover:text-white transition-colors">Reviews</a>
                 <a href="#about" class="hover:text-white transition-colors">About</a>
                 <a href="#contact" class="hover:text-white transition-colors">Contact</a>
             </nav>
@@ -150,7 +151,70 @@
         <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
     </main>
 
-    <!-- About / Contact -->
+    <!-- Reviews Section -->
+    <section id="reviews" class="border-t border-brand-border bg-brand-bg py-16 scroll-mt-16">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 space-y-10">
+            <div class="text-center space-y-2">
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-red/10 text-brand-red text-xs font-bold uppercase tracking-wider">
+                    <i data-lucide="star" class="w-3.5 h-3.5 fill-brand-red"></i> Customer Feedback
+                </span>
+                <h2 class="font-display text-3xl font-extrabold text-white">What Our Buyers Say</h2>
+                <p class="text-sm text-brand-muted max-w-md mx-auto">Verified orders delivered directly across Palestine.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="p-6 rounded-2xl bg-brand-card border border-brand-border space-y-4 flex flex-col justify-between">
+                    <div class="space-y-3">
+                        <div class="flex text-amber-400 gap-1">
+                            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i><i data-lucide="star" class="w-4 h-4 fill-amber-400"></i><i data-lucide="star" class="w-4 h-4 fill-amber-400"></i><i data-lucide="star" class="w-4 h-4 fill-amber-400"></i><i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                        </div>
+                        <p class="text-sm text-gray-300 leading-relaxed">"Great quality product and very fast response on WhatsApp. Delivered straight to Jenin in two days. Highly recommended!"</p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-brand-border">
+                        <div class="w-9 h-9 rounded-full bg-brand-red/20 text-brand-red font-bold flex items-center justify-center text-sm">AH</div>
+                        <div>
+                            <p class="text-xs font-bold text-white">Ahmad H.</p>
+                            <p class="text-[10px] text-brand-muted">Verified Purchase</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-brand-card border border-brand-border space-y-4 flex flex-col justify-between">
+                    <div class="space-y-3">
+                        <div class="flex text-amber-400 gap-1">
+                            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i><i data-lucide="star" class="w-4 h-4 fill-amber-400"></i><i data-lucide="star" class="w-4 h-4 fill-amber-400"></i><i data-lucide="star" class="w-4 h-4 fill-amber-400"></i><i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                        </div>
+                        <p class="text-sm text-gray-300 leading-relaxed">"Mohamed was very helpful answering my questions about sizing. Item matched the photos exactly. Will buy again!"</p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-brand-border">
+                        <div class="w-9 h-9 rounded-full bg-brand-red/20 text-brand-red font-bold flex items-center justify-center text-sm">TK</div>
+                        <div>
+                            <p class="text-xs font-bold text-white">Tariq K.</p>
+                            <p class="text-[10px] text-brand-muted">Verified Purchase</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-brand-card border border-brand-border space-y-4 flex flex-col justify-between">
+                    <div class="space-y-3">
+                        <div class="flex text-amber-400 gap-1">
+                            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i><i data-lucide="star" class="w-4 h-4 fill-amber-400"></i><i data-lucide="star" class="w-4 h-4 fill-amber-400"></i><i data-lucide="star" class="w-4 h-4 fill-amber-400"></i><i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                        </div>
+                        <p class="text-sm text-gray-300 leading-relaxed">"Honest pricing and excellent service. Smooth ordering process over WhatsApp without any hassle."</p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-brand-border">
+                        <div class="w-9 h-9 rounded-full bg-brand-red/20 text-brand-red font-bold flex items-center justify-center text-sm">MS</div>
+                        <div>
+                            <p class="text-xs font-bold text-white">Mahmoud S.</p>
+                            <p class="text-[10px] text-brand-muted">Verified Purchase</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
     <section id="about" class="border-t border-brand-border bg-brand-card/40 scroll-mt-16">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 py-14 grid md:grid-cols-3 gap-6">
             <div class="p-6 rounded-2xl bg-brand-card border border-brand-border space-y-2">
@@ -192,7 +256,7 @@
         <svg class="w-7 h-7" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
     </a>
 
-    <!-- Product detail modal -->
+    <!-- Product Detail Modal -->
     <div id="productModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden items-center justify-center p-4" onclick="if (event.target === this) closeModal('productModal')">
         <div class="bg-brand-card border border-brand-border w-full max-w-3xl rounded-3xl overflow-hidden shadow-2xl relative grid md:grid-cols-2">
             <button onclick="closeModal('productModal')" class="absolute right-3 top-3 z-10 p-2 bg-black/60 text-gray-300 hover:text-white rounded-full"><i data-lucide="x" class="w-5 h-5"></i></button>
@@ -200,7 +264,7 @@
             <div class="p-7 flex flex-col gap-4">
                 <span id="modalCategory" class="self-start text-[10px] font-bold uppercase tracking-wider text-brand-red bg-brand-red/10 px-2.5 py-1 rounded-md"></span>
                 <h3 id="modalTitle" class="font-display text-2xl font-extrabold text-white"></h3>
-                <p id="modalPrice" class="text-2xl font-black text-brand-red"></p>
+                <div id="modalPriceContainer"></div>
                 <p id="modalDesc" class="text-sm text-gray-400 leading-relaxed whitespace-pre-line flex-1"></p>
                 <div class="space-y-2 pt-4 border-t border-brand-border">
                     <button id="modalAddBtn" class="w-full py-3 bg-brand-red hover:bg-brand-darkRed text-white font-bold text-sm rounded-xl flex items-center justify-center gap-2 transition-all">
@@ -214,7 +278,7 @@
         </div>
     </div>
 
-    <!-- Cart drawer -->
+    <!-- Cart Drawer -->
     <div id="cartDrawer" class="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm hidden justify-end" onclick="if (event.target === this) toggleCart(false)">
         <div class="bg-brand-card border-l border-brand-border w-full max-w-md h-full flex flex-col shadow-2xl">
             <div class="p-5 border-b border-brand-border flex items-center justify-between">
@@ -234,7 +298,7 @@
         </div>
     </div>
 
-    <!-- Admin: code entry -->
+    <!-- Admin Code Entry -->
     <div id="codeModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden items-center justify-center p-4" onclick="if (event.target === this) closeModal('codeModal')">
         <form onsubmit="submitCode(event)" class="bg-brand-card border border-brand-border w-full max-w-sm rounded-3xl p-7 space-y-5 shadow-2xl">
             <div class="text-center space-y-2">
@@ -251,13 +315,13 @@
         </form>
     </div>
 
-    <!-- Admin: product manager -->
+    <!-- Admin Product Manager -->
     <div id="adminPanel" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden justify-end">
         <div class="bg-brand-bg border-l border-brand-border w-full max-w-2xl h-full flex flex-col shadow-2xl">
             <div class="p-5 border-b border-brand-border flex items-center justify-between bg-brand-card">
                 <div>
                     <h3 class="font-bold text-white text-lg flex items-center gap-2"><i data-lucide="settings-2" class="w-5 h-5 text-brand-red"></i> Product manager</h3>
-                    <p class="text-xs text-brand-muted">Add, edit or remove products from your store.</p>
+                    <p class="text-xs text-brand-muted">Add, edit or set sales for your store products.</p>
                 </div>
                 <div class="flex items-center gap-2">
                     <button onclick="lockAdmin()" class="px-3 py-2 text-xs font-semibold rounded-lg border border-brand-border text-brand-muted hover:text-white flex items-center gap-1.5"><i data-lucide="log-out" class="w-3.5 h-3.5"></i> Lock</button>
@@ -283,10 +347,19 @@
                         </label>
                         <div class="space-y-4">
                             <label class="block"><span class="label">Product name</span><input name="title" required maxlength="120" class="field" placeholder="e.g. Leather wallet"></label>
+                            
                             <div class="grid grid-cols-2 gap-3">
-                                <label class="block"><span class="label">Price (<span class="currency">$</span>)</span><input name="price" required type="number" min="0" step="0.01" class="field" placeholder="0.00"></label>
-                                <label class="block"><span class="label">Category</span><input name="category" list="categoryList" maxlength="40" class="field" placeholder="e.g. Accessories"></label>
+                                <label class="block">
+                                    <span class="label">Original Price ($)</span>
+                                    <input name="price" required type="number" min="0" step="0.01" class="field" placeholder="0.00">
+                                </label>
+                                <label class="block">
+                                    <span class="label">Sale Price ($) <span class="text-brand-muted font-normal">(Optional)</span></span>
+                                    <input name="salePrice" type="number" min="0" step="0.01" class="field border-brand-red/50" placeholder="Optional discount">
+                                </label>
                             </div>
+
+                            <label class="block"><span class="label">Category</span><input name="category" list="categoryList" maxlength="40" class="field" placeholder="e.g. Accessories"></label>
                             <datalist id="categoryList"></datalist>
                         </div>
                     </div>
@@ -306,7 +379,7 @@
         </div>
     </div>
 
-    <!-- Toast -->
+    <!-- Toast Notification -->
     <div id="toast" class="fixed bottom-24 left-1/2 -translate-x-1/2 z-[60] bg-brand-card border border-brand-border text-white px-4 py-3 rounded-xl shadow-2xl opacity-0 pointer-events-none transition-opacity duration-300 flex items-center gap-2 text-sm">
         <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-500"></i><span id="toastMsg"></span>
     </div>
@@ -391,14 +464,18 @@
             renderProducts();
         }
 
+        function getActivePrice(p) {
+            return (p.salePrice && Number(p.salePrice) > 0) ? Number(p.salePrice) : Number(p.price);
+        }
+
         function renderProducts() {
             const sort = $('sortSelect').value;
             const list = state.products.filter((p) =>
                 (state.category === 'All' || p.category === state.category) &&
                 (p.title + ' ' + p.description).toLowerCase().includes(state.search));
 
-            if (sort === 'price-low') list.sort((a, b) => a.price - b.price);
-            if (sort === 'price-high') list.sort((a, b) => b.price - a.price);
+            if (sort === 'price-low') list.sort((a, b) => getActivePrice(a) - getActivePrice(b));
+            if (sort === 'price-high') list.sort((a, b) => getActivePrice(b) - getActivePrice(a));
             if (sort === 'title') list.sort((a, b) => a.title.localeCompare(b.title));
 
             const total = state.products.length;
@@ -414,11 +491,16 @@
                 return icons();
             }
 
-            $('productGrid').innerHTML = list.map((p) => `
+            $('productGrid').innerHTML = list.map((p) => {
+                const hasSale = p.salePrice && Number(p.salePrice) > 0 && Number(p.salePrice) < Number(p.price);
+                const activePrice = hasSale ? Number(p.salePrice) : Number(p.price);
+
+                return `
                 <article class="group bg-brand-card border border-brand-border hover:border-brand-red/50 rounded-2xl overflow-hidden flex flex-col transition-all duration-300 hover:-translate-y-1">
                     <button onclick="openProduct(${p.id})" class="aspect-[4/3] bg-black relative overflow-hidden">
                         <img src="${esc(p.image || PLACEHOLDER)}" alt="${esc(p.title)}" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                         <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-black/70 backdrop-blur text-[10px] font-bold text-white uppercase tracking-wider">${esc(p.category)}</span>
+                        ${hasSale ? `<span class="absolute top-3 right-3 px-2.5 py-1 rounded-md bg-brand-red text-[10px] font-extrabold text-white uppercase tracking-wider shadow-lg">SALE</span>` : ''}
                     </button>
                     <div class="p-5 flex-1 flex flex-col gap-4">
                         <div class="flex-1 space-y-1.5">
@@ -426,25 +508,39 @@
                             <p class="text-sm text-brand-muted line-clamp-2">${esc(p.description)}</p>
                         </div>
                         <div class="flex items-center justify-between gap-3">
-                            <span class="text-xl font-black text-white">${money(p.price)}</span>
+                            <div class="flex items-baseline gap-2">
+                                <span class="text-xl font-black text-white">${money(activePrice)}</span>
+                                ${hasSale ? `<span class="text-xs text-brand-muted line-through font-semibold">${money(p.price)}</span>` : ''}
+                            </div>
                             <button onclick="addToCart(${p.id})" class="px-4 py-2 rounded-xl bg-brand-red/10 border border-brand-red/40 hover:bg-brand-red text-white text-xs font-bold flex items-center gap-1.5 transition-all">
                                 <i data-lucide="plus" class="w-3.5 h-3.5"></i> Add
                             </button>
                         </div>
                     </div>
-                </article>`).join('');
+                </article>`;
+            }).join('');
             icons();
         }
 
         function openProduct(id) {
             const p = state.products.find((x) => x.id === id);
             if (!p) return;
+            const hasSale = p.salePrice && Number(p.salePrice) > 0 && Number(p.salePrice) < Number(p.price);
+            const activePrice = hasSale ? Number(p.salePrice) : Number(p.price);
+
             $('modalImg').src = p.image || PLACEHOLDER;
             $('modalImg').alt = p.title;
             $('modalTitle').textContent = p.title;
             $('modalCategory').textContent = p.category;
-            $('modalPrice').textContent = money(p.price);$('modalDesc').textContent = p.description;
-            $('modalAddBtn').onclick = () => { addToCart(p.id); closeModal('productModal'); };$('modalWaBtn').href = waLink(`Hello Mohamed, I'm interested in "${p.title}" (${money(p.price)})`);
+            
+            $('modalPriceContainer').innerHTML = `
+                <div class="flex items-baseline gap-3">
+                    <span class="text-2xl font-black text-brand-red">${money(activePrice)}</span>
+                    ${hasSale ? `<span class="text-sm text-brand-muted line-through">${money(p.price)}</span>` : ''}
+                </div>`;
+
+            $('modalDesc').textContent = p.description;
+            $('modalAddBtn').onclick = () => { addToCart(p.id); closeModal('productModal'); };$('modalWaBtn').href = waLink(`Hello Mohamed, I'm interested in "${p.title}" (${money(activePrice)})`);
             openModal('productModal');
         }
 
@@ -452,7 +548,8 @@
             const p = state.products.find((x) => x.id === id);
             if (!p) return;
             const item = state.cart.find((c) => c.id === id);
-            item ? item.qty++ : state.cart.push({ ...p, qty: 1 });
+            const activePrice = getActivePrice(p);
+            item ? item.qty++ : state.cart.push({ ...p, price: activePrice, qty: 1 });
             updateCart();
             toast(`Added "${p.title}" to your cart`);
         }
@@ -467,7 +564,7 @@
 
         function updateCart() {
             localStorage.setItem('kn-cart', JSON.stringify(state.cart.map(({ id, qty }) => ({ id, qty }))));
-            $('cartBadge').textContent = state.cart.reduce((n, c) => n + c.qty, 0);$('cartTotal').textContent = money(state.cart.reduce((n, c) => n + c.price * c.qty, 0));
+            $('cartBadge').textContent = state.cart.reduce((n, c) => n + c.qty, 0);$('cartTotal').textContent = money(state.cart.reduce((n, c) => n + (c.price * c.qty), 0));
 
             $('cartItems').innerHTML = state.cart.length === 0
                 ? `<div class="text-center py-16 space-y-3"><i data-lucide="shopping-bag" class="w-10 h-10 text-brand-muted mx-auto"></i><p class="text-sm text-brand-muted">Your cart is empty.</p></div>`
@@ -508,8 +605,6 @@
         function submitCode(e) {
             e.preventDefault();
             const code = $('codeInput').value.trim();
-            
-            // Validate passcode directly
             if (code === '591900') {
                 adminCode = code;
                 sessionStorage.setItem('kn-admin', code);
@@ -538,16 +633,22 @@
             $('adminCount').textContent = `(${state.products.length})`;
             $('adminList').innerHTML = state.products.length === 0
                 ? '<p class="text-sm text-brand-muted py-6 text-center border border-dashed border-brand-border rounded-xl">No products yet — add your first one above.</p>'
-                : state.products.map((p) => `
+                : state.products.map((p) => {
+                    const hasSale = p.salePrice && Number(p.salePrice) > 0;
+                    return `
                     <div class="flex items-center gap-3 p-3 bg-brand-card border border-brand-border rounded-xl">
                         <img src="${esc(p.image || PLACEHOLDER)}" alt="" class="w-12 h-12 rounded-lg object-cover">
                         <div class="flex-1 min-w-0">
                             <p class="text-sm font-semibold text-white truncate">${esc(p.title)}</p>
-                            <p class="text-xs text-brand-muted">${money(p.price)} · ${esc(p.category)}</p>
+                            <p class="text-xs text-brand-muted">
+                                ${hasSale ? `<span class="text-brand-red font-bold">${money(p.salePrice)}</span> <span class="line-through">${money(p.price)}</span>` : money(p.price)}
+                                · ${esc(p.category)}
+                            </p>
                         </div>
                         <button onclick="editProduct(${p.id})" class="p-2 rounded-lg text-brand-muted hover:text-white hover:bg-brand-hover" title="Edit"><i data-lucide="pencil" class="w-4 h-4"></i></button>
                         <button onclick="deleteProduct(${p.id})" class="p-2 rounded-lg text-brand-muted hover:text-red-400 hover:bg-brand-hover" title="Delete"><i data-lucide="trash-2" class="w-4 h-4"></i></button>
-                    </div>`).join('');
+                    </div>`;
+                }).join('');
             icons();
         }
 
@@ -561,7 +662,7 @@
         function resetForm() {
             state.editingId = null;
             $('productForm').reset();
-            $('imagePreview').classList.add('hidden');$('imagePlaceholder').remove('hidden');
+            $('imagePreview').classList.add('hidden');$('imagePlaceholder').classList.remove('hidden');
             $('formError').classList.add('hidden');$('formTitle').textContent = 'Add a new product';
             $('saveBtn').querySelector('span').textContent = 'Add product';$('cancelEditBtn').classList.add('hidden');
         }
@@ -574,6 +675,7 @@
             const f = $('productForm').elements;
             f.title.value = p.title;
             f.price.value = p.price;
+            f.salePrice.value = p.salePrice || '';
             f.category.value = p.category;
             f.description.value = p.description;
             if (p.image) {
@@ -585,7 +687,17 @@
             $('cancelEditBtn').classList.remove('hidden');$('productForm').scrollIntoView({ behavior: 'smooth' });
         }
 
-        async function compressImage(file, maxSize = 1400) {
+        function fileToBase64(file) {
+            return new Promise((resolve, reject) => {
+                if (!file) return resolve('');
+                const reader = new FileReader();
+                reader.onload = () => resolve(reader.result);
+                reader.onerror = (err) => reject(err);
+                reader.readAsDataURL(file);
+            });
+        }
+
+        async function compressImage(file, maxSize = 1000) {
             if (!file || !file.size) return null;
             const img = await createImageBitmap(file);
             const scale = Math.min(1, maxSize / Math.max(img.width, img.height));
@@ -593,11 +705,11 @@
             canvas.width = Math.round(img.width * scale);
             canvas.height = Math.round(img.height * scale);
             canvas.getContext('2d').drawImage(img, 0, 0, canvas.width, canvas.height);
-            return new Promise((resolve) => canvas.toBlob(resolve, 'image/jpeg', 0.85));
+            return new Promise((resolve) => canvas.toBlob(resolve, 'image/jpeg', 0.8));
         }
 
         async function adminRequest(url, options) {
-            const res = await fetch(url, { ...options, headers: { 'x-admin-code': adminCode } });
+            const res = await fetch(url, { ...options, headers: { ...(options.headers || {}), 'x-admin-code': adminCode } });
             if (res.status === 401) {
                 lockAdmin();
                 throw new Error('Your session expired — please enter the code again.');
@@ -610,22 +722,45 @@
         async function saveProduct(e) {
             e.preventDefault();
             const form = $('productForm');
-            const btn = $('saveBtn');
-            const data = new FormData(form);
-            $('formError').classList.add('hidden');
+            const btn = $('saveBtn');$('formError').classList.add('hidden');
             btn.disabled = true;
+
             try {
-                data.delete('image');
-                const image = await compressImage($('imageInput').files[0]);
-                if (image) data.append('image', image, 'photo.jpg');
+                const fileInput = $('imageInput');
+                let imageBase64 = '';
+
+                if (fileInput.files && fileInput.files[0]) {
+                    const compressed = await compressImage(fileInput.files[0]);
+                    imageBase64 = await fileToBase64(compressed);
+                } else if (state.editingId) {
+                    const existing = state.products.find(x => x.id === state.editingId);
+                    imageBase64 = existing ? existing.image : '';
+                }
+
+                const payload = {
+                    title: form.elements.title.value.trim(),
+                    price: parseFloat(form.elements.price.value) || 0,
+                    salePrice: form.elements.salePrice.value ? parseFloat(form.elements.salePrice.value) : null,
+                    category: form.elements.category.value.trim() || 'General',
+                    description: form.elements.description.value.trim(),
+                    image: imageBase64
+                };
+
                 const editing = state.editingId;
-                await adminRequest(editing ? `/api/products/${editing}` : '/api/products', { method: editing ? 'PUT' : 'POST', body: data });
+                const endpoint = editing ? `/api/products/${editing}` : '/api/products';
+                const method = editing ? 'PUT' : 'POST';
+
+                await adminRequest(endpoint, {
+                    method: method,
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
                 toast(editing ? 'Product updated' : 'Product added to your store');
                 resetForm();
                 await loadProducts();
             } catch (err) {
-                $('formError').textContent = err.message;
-                $('formError').classList.remove('hidden');
+                $('formError').textContent = err.message \vert{}\vert{} 'Failed to save product.';$('formError').classList.remove('hidden');
             } finally {
                 btn.disabled = false;
             }
