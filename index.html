@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>King Noble | Mohamed's Store</title>
+    <title>King Noble | Store</title>
     <meta name="description" content="King Noble — quality products hand-picked by Mohamed. Order directly on WhatsApp: 059 304 8579.">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -82,7 +82,7 @@
         <div class="max-w-6xl mx-auto px-4 sm:px-6 py-16 sm:py-24 grid md:grid-cols-[1.4fr_1fr] gap-10 items-center">
             <div class="space-y-6">
                 <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-red/10 border border-brand-red/30 text-brand-red text-[11px] font-bold uppercase tracking-wider">
-                    <i data-lucide="shield-check" class="w-3.5 h-3.5"></i> Quality you can trust
+                    <i data-lucide="shield-check" class="w-3.5 h-3.5"></i> Premium Quality
                 </span>
                 <h1 class="font-display text-4xl sm:text-6xl font-extrabold text-white leading-[1.05]">
                     Hand-picked products,<br><span class="text-brand-red">sold directly by Mohamed.</span>
@@ -165,7 +165,7 @@
             </div>
             <div class="p-6 rounded-2xl bg-brand-card border border-brand-border space-y-2">
                 <i data-lucide="truck" class="w-6 h-6 text-brand-red"></i>
-                <h3 class="font-bold text-white">Local delivery</h3>
+                <h3 class="font-bold text-white">Fast delivery</h3>
                 <p class="text-sm text-brand-muted leading-relaxed">Fast, friendly delivery arranged directly with you across Palestine.</p>
             </div>
         </div>
@@ -224,7 +224,7 @@
             <div id="cartItems" class="flex-1 overflow-y-auto p-5 space-y-4"></div>
             <div class="p-5 border-t border-brand-border space-y-4">
                 <div class="flex justify-between text-lg font-bold text-white">
-                    <span>Total</span><span id="cartTotal" class="text-brand-red">0</span>
+                    <span>Total</span><span id="cartTotal" class="text-brand-red">$0</span>
                 </div>
                 <button onclick="checkout()" class="w-full py-3.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-xl text-sm flex items-center justify-center gap-2 transition-all">
                     <i data-lucide="send" class="w-4 h-4"></i> Send order to Mohamed on WhatsApp
@@ -284,7 +284,7 @@
                         <div class="space-y-4">
                             <label class="block"><span class="label">Product name</span><input name="title" required maxlength="120" class="field" placeholder="e.g. Leather wallet"></label>
                             <div class="grid grid-cols-2 gap-3">
-                                <label class="block"><span class="label">Price (<span class="currency"></span>)</span><input name="price" required type="number" min="0" step="0.01" class="field" placeholder="0.00"></label>
+                                <label class="block"><span class="label">Price (<span class="currency">$</span>)</span><input name="price" required type="number" min="0" step="0.01" class="field" placeholder="0.00"></label>
                                 <label class="block"><span class="label">Category</span><input name="category" list="categoryList" maxlength="40" class="field" placeholder="e.g. Accessories"></label>
                             </div>
                             <datalist id="categoryList"></datalist>
@@ -312,9 +312,8 @@
     </div>
 
     <script>
-        // --- STORE SETTINGS ---
-        const PHONE_LOCAL = '0593048579';   // Mohamed's Palestinian mobile number
-        const PHONE_INTL = '972593048579';  // Same number with the +972 country code, used by WhatsApp
+        const PHONE_LOCAL = '0593048579';
+        const PHONE_INTL = '972593048579';
         const CURRENCY = '$';
 
         const state = { products: [], category: 'All', search: '', cart: JSON.parse(localStorage.getItem('kn-cart') || '[]'), editingId: null };
@@ -347,10 +346,9 @@
             toast.t = setTimeout(() => $('toast').classList.add('opacity-0'), 2500);
         }
 
-        function openModal(id) { $(id).classList.remove('hidden'); $(id).classList.add('flex'); }
-        function closeModal(id) { $(id).classList.add('hidden'); $(id).classList.remove('flex'); }
+        function openModal(id) { $(id).classList.remove('hidden');$(id).classList.add('flex'); }
+        function closeModal(id) { $(id).classList.add('hidden');$(id).classList.remove('flex'); }
 
-        // --- PRODUCTS ---
         async function loadProducts() {
             try {
                 const res = await fetch('/api/products');
@@ -360,7 +358,6 @@
                 $('productCount').textContent = 'Could not load products right now.';
                 return;
             }
-            // Drop cart items for products that no longer exist, refresh prices for the rest
             state.cart = state.cart.flatMap((c) => {
                 const p = state.products.find((x) => x.id === c.id);
                 return p ? [{ ...p, qty: c.qty }] : [];
@@ -446,14 +443,11 @@
             $('modalImg').alt = p.title;
             $('modalTitle').textContent = p.title;
             $('modalCategory').textContent = p.category;
-            $('modalPrice').textContent = money(p.price);
-            $('modalDesc').textContent = p.description;
-            $('modalAddBtn').onclick = () => { addToCart(p.id); closeModal('productModal'); };
-            $('modalWaBtn').href = waLink(`Hello Mohamed, I'm interested in "${p.title}" (${money(p.price)})`);
+            $('modalPrice').textContent = money(p.price);$('modalDesc').textContent = p.description;
+            $('modalAddBtn').onclick = () => { addToCart(p.id); closeModal('productModal'); };$('modalWaBtn').href = waLink(`Hello Mohamed, I'm interested in "${p.title}" (${money(p.price)})`);
             openModal('productModal');
         }
 
-        // --- CART ---
         function addToCart(id) {
             const p = state.products.find((x) => x.id === id);
             if (!p) return;
@@ -473,8 +467,7 @@
 
         function updateCart() {
             localStorage.setItem('kn-cart', JSON.stringify(state.cart.map(({ id, qty }) => ({ id, qty }))));
-            $('cartBadge').textContent = state.cart.reduce((n, c) => n + c.qty, 0);
-            $('cartTotal').textContent = money(state.cart.reduce((n, c) => n + c.price * c.qty, 0));
+            $('cartBadge').textContent = state.cart.reduce((n, c) => n + c.qty, 0);$('cartTotal').textContent = money(state.cart.reduce((n, c) => n + c.price * c.qty, 0));
 
             $('cartItems').innerHTML = state.cart.length === 0
                 ? `<div class="text-center py-16 space-y-3"><i data-lucide="shopping-bag" class="w-10 h-10 text-brand-muted mx-auto"></i><p class="text-sm text-brand-muted">Your cart is empty.</p></div>`
@@ -505,11 +498,9 @@
             window.open(waLink(`Hello Mohamed, I'd like to order from King Noble:\n\n${lines.join('\n')}\n\nTotal: ${total}`), '_blank');
         }
 
-        // --- ADMIN / PRODUCT MANAGER ---
         function openAdmin() {
             if (adminCode) return showAdminPanel();
-            $('codeInput').value = '';
-            $('codeError').classList.add('hidden');
+            $('codeInput').value = '';$('codeError').classList.add('hidden');
             openModal('codeModal');
             setTimeout(() => $('codeInput').focus(), 50);
         }
@@ -517,15 +508,16 @@
         async function submitCode(e) {
             e.preventDefault();
             const code = $('codeInput').value.trim();
-            const res = await fetch('/api/auth', { method: 'POST', headers: { 'x-admin-code': code } });
-            if (!res.ok) {
+            try {
+                const res = await fetch('/api/auth', { method: 'POST', headers: { 'x-admin-code': code } });
+                if (!res.ok) throw new Error();
+                adminCode = code;
+                sessionStorage.setItem('kn-admin', code);
+                closeModal('codeModal');
+                showAdminPanel();
+            } catch {
                 $('codeError').classList.remove('hidden');
-                return;
             }
-            adminCode = code;
-            sessionStorage.setItem('kn-admin', code);
-            closeModal('codeModal');
-            showAdminPanel();
         }
 
         function showAdminPanel() {
@@ -562,19 +554,15 @@
             const file = input.files[0];
             if (!file) return;
             $('imagePreview').src = URL.createObjectURL(file);
-            $('imagePreview').classList.remove('hidden');
-            $('imagePlaceholder').classList.add('hidden');
+            $('imagePreview').classList.remove('hidden');$('imagePlaceholder').classList.add('hidden');
         }
 
         function resetForm() {
             state.editingId = null;
             $('productForm').reset();
-            $('imagePreview').classList.add('hidden');
-            $('imagePlaceholder').classList.remove('hidden');
-            $('formError').classList.add('hidden');
-            $('formTitle').textContent = 'Add a new product';
-            $('saveBtn').querySelector('span').textContent = 'Add product';
-            $('cancelEditBtn').classList.add('hidden');
+            $('imagePreview').classList.add('hidden');$('imagePlaceholder').remove('hidden');
+            $('formError').classList.add('hidden');$('formTitle').textContent = 'Add a new product';
+            $('saveBtn').querySelector('span').textContent = 'Add product';$('cancelEditBtn').classList.add('hidden');
         }
 
         function editProduct(id) {
@@ -589,16 +577,13 @@
             f.description.value = p.description;
             if (p.image) {
                 $('imagePreview').src = p.image;
-                $('imagePreview').classList.remove('hidden');
-                $('imagePlaceholder').classList.add('hidden');
+                $('imagePreview').classList.remove('hidden');$('imagePlaceholder').classList.add('hidden');
             }
             $('formTitle').textContent = `Editing "${p.title}"`;
             $('saveBtn').querySelector('span').textContent = 'Save changes';
-            $('cancelEditBtn').classList.remove('hidden');
-            $('productForm').scrollIntoView({ behavior: 'smooth' });
+            $('cancelEditBtn').classList.remove('hidden');$('productForm').scrollIntoView({ behavior: 'smooth' });
         }
 
-        // Shrink large phone photos before upload so they load fast for customers
         async function compressImage(file, maxSize = 1400) {
             if (!file || !file.size) return null;
             const img = await createImageBitmap(file);
