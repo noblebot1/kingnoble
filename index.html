@@ -505,17 +505,18 @@
             setTimeout(() => $('codeInput').focus(), 50);
         }
 
-        async function submitCode(e) {
+        function submitCode(e) {
             e.preventDefault();
             const code = $('codeInput').value.trim();
-            try {
-                const res = await fetch('/api/auth', { method: 'POST', headers: { 'x-admin-code': code } });
-                if (!res.ok) throw new Error();
+            
+            // Validate passcode directly
+            if (code === '591900') {
                 adminCode = code;
                 sessionStorage.setItem('kn-admin', code);
+                $('codeError').classList.add('hidden');
                 closeModal('codeModal');
                 showAdminPanel();
-            } catch {
+            } else {
                 $('codeError').classList.remove('hidden');
             }
         }
